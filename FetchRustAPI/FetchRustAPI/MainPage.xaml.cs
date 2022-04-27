@@ -24,7 +24,7 @@ namespace FetchRustAPI
             mv = new MainView();
             this.BindingContext = mv;
 
-            Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {
                 aTimer.Elapsed += OnTimedEvent;
                 aTimer.AutoReset = true;

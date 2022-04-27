@@ -15,8 +15,8 @@ namespace FetchRustAPI.ViewModel
 {
     class MainView : INotifyPropertyChanged
     {
-        private List<datasModel> _datas;
-        public List<datasModel> Datas
+        private ObservableCollection<datasModel> _datas;
+        public ObservableCollection<datasModel> Datas
         {
             get
             {              
@@ -34,8 +34,8 @@ namespace FetchRustAPI.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public MainView()
-        {
-            Datas = new List<datasModel>();
+        {          
+            Datas = new ObservableCollection<datasModel>();
         }
 
         public async void fetch_data()
@@ -46,7 +46,7 @@ namespace FetchRustAPI.ViewModel
             response.EnsureSuccessStatusCode();
             var responseBody = await response.Content.ReadAsStringAsync();
 
-            Datas = JsonConvert.DeserializeObject<List<datasModel>>(responseBody);        
+            Datas = JsonConvert.DeserializeObject<ObservableCollection<datasModel>>(responseBody);        
         }
     }
     

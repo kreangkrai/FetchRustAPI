@@ -28,140 +28,59 @@
                         Text="Load Data"
                         TextColor="White"
                         WidthRequest="100" />
-                    <StackLayout>
-                        <Frame BackgroundColor="Azure">
-                            <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Datas[0].Device}"
-                                    VerticalTextAlignment="Center" />
-                                <Grid
-                                    ColumnSpacing="5"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="2*" />
-                                    </Grid.ColumnDefinitions>
+                    <ListView
+                        BackgroundColor="Beige"
+                        HasUnevenRows="True"
+                        ItemsSource="{Binding Datas}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding Device}"
+                                            VerticalTextAlignment="Center" />
+                                        <Grid
+                                            ColumnSpacing="5"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
 
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Value" />
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[0].Value}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Date" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[0].Date}" />
-                                </Grid>
-                            </StackLayout>
-                        </Frame>
-                        <Frame BackgroundColor="Azure">
-                            <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Datas[1].Device}"
-                                    VerticalTextAlignment="Center" />
-                                <Grid
-                                    ColumnSpacing="5"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="2*" />
-                                    </Grid.ColumnDefinitions>
-
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Value" />
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[1].Value}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Date" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[1].Date}" />
-                                </Grid>
-                            </StackLayout>
-                        </Frame>
-                        <Frame BackgroundColor="Azure">
-                            <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="20"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Datas[2].Device}"
-                                    VerticalTextAlignment="Center" />
-                                <Grid
-                                    ColumnSpacing="5"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="2*" />
-                                    </Grid.ColumnDefinitions>
-
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Value" />
-                                    <Label
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[2].Value}" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        FontAttributes="Bold"
-                                        Text="Date" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.Column="1"
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="{Binding Datas[2].Date}" />
-                                </Grid>
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                FontAttributes="Bold"
+                                                Text="Value" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="{Binding Value}" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                FontAttributes="Bold"
+                                                Text="Date" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                HorizontalOptions="EndAndExpand"
+                                                Text="{Binding Date}" />
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </Frame>
         </StackLayout>
